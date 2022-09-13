@@ -6,4 +6,4 @@ if __name__ == '__main__':
     minus = a - b 
     mult = a * b
 
-    print(f"{summing}\n{minus}\n{mult}")
+    print(f"{summing}\n{minus}\n{mult}")  
