@@ -1,7 +1,3 @@
-from re import L
-
-from sympy import li
-
 
 n = int(input())
 arr = map(int, input().split()) #separate
@@ -12,4 +8,4 @@ for i in arr:
     if i != max(arr):  #max point is cut from list
         filtered_winner.append(i)
 
-print(f" {max(filtered_winner)}") #new max is gonna  actually be the second max score 
+print(f"{max(filtered_winner)}") #new max is gonna  actually be the second max score 
