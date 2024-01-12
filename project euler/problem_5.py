@@ -1,17 +1,13 @@
-#euler project
-#project N5
-import random
-from numpy import number
-import numpy as np 
-
-ganayofebi = []
-while True:
-    num = random.choice(range(1,100000))
+def Divisible(num):        #checks if it is divisible or not and reutrs bool
     for i in range(1,21):
-        a = num % i
-        if a == 0:
-            ganayofebi.append(num)
-    else:
-        break
+        if num%i != 0:
+            return False
+    return True
 
-print(ganayofebi)
+num = 1 
+while True:
+    if Divisible(num):  #it stops when 1st division occurs so it's gonna be the smallest
+        break
+    num+=1   #or it colntinues looping
+
+print(num)
