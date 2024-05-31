@@ -1,7 +1,16 @@
-
 import numpy as np
-num = np.array([i for i in range(1,101)])
-sum_of_squares = sum(num**2)
-square_of_sum = (sum(num))**2
+def SumSquareDiff(range_arr=[1,101]):
+    """
+    Finding Substraction of sum of squared array items and square of summed items
+    
+    Args:
+    range_arr (list) : list containging 2 items firts is lower boundary of range and second is upper boundary on range
 
-print(square_of_sum-sum_of_squares)
+    """
+    # arranging array
+    arr = np.arange(range_arr[0], range_arr[1])
+
+    # returning the value
+    return (sum(arr.tolist())**2) - sum((arr**2).tolist())
+
+SumSquareDiff()

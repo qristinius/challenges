@@ -1,25 +1,29 @@
-#euler project
-#project N2 
+import numpy as np
+def EvenFibonacci(n=4_000_000):
+    """
+    Finding sum of even fibonacci numbers with upper boundary
+    
+    Args:
+    n (int) : upper boundary
+
+    """
 
 
-
-list_fibonacci = [1 , 1] #creating list with first numbers of fibonacci to add nect numbers later
-even_numbers = []  #creating an empty list to add even numbers and then sum all of it for last answer 
-
-#logics for fibonacci sequence
-#when the sum of last two numbers exceed the 4e6 the while loop stops 
-while (list_fibonacci[-1] + list_fibonacci[-2]) < 4e6:
-    new_num = list_fibonacci[-1] + list_fibonacci[-2]  #new number is new nuber for fibonacci sequene this means adding last two numbers of the list 
-    list_fibonacci.append(new_num)  #adding new fibonacci numbers in list for fibonacci numbers    
-
-#logics for even numbers in fibonacci sequence 
-for i in list_fibonacci:
-    if i % 2 == 1:
-        even_numbers.append(i)  #adding even numbers to new list for even numbers that was created before 
-
-print(sum(even_numbers))
+    # list with first two items of fibonacci numbers
+    fib = [0,1]
 
 
+    # while the last number is less than the upper boundary it will continue adding to list
+    while fib[-1] +fib[-2] < n:
+        fib.append(fib[-1] + fib[-2])
 
+    # transforming it into array
+    fibonaccy_array = np.array(fib)
 
+    # create filter to get even numbers
+    mask = (fibonaccy_array % 2 == 0)
 
+    # returning sum of even fibonacci numbers 
+    return sum(fibonaccy_array[mask].tolist())
+
+EvenFibonacci()
