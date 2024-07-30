@@ -1,13 +1,15 @@
-def Divisible(num):        #checks if it is divisible or not and reutrs bool
-    for i in range(1,21):
+# checks if passed number is divisble by all the numbers in given problem 
+def Divisible(num, start=1, end=20):
+    for i in range(start,end+1):
         if num%i != 0:
             return False
     return True
 
-num = 1 
+num = 1
+# if Divisible function returns true it will break and we will get the number else it adds num 1 till we get the
+# value we want
 while True:
-    if Divisible(num):  #it stops when 1st division occurs so it's gonna be the smallest
+    if Divisible(num):
         break
-    num+=1   #or it colntinues looping
-
+    num+=1
 print(num)
