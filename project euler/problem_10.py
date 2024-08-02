@@ -1,3 +1,5 @@
+import math as m
+
 # list where we save prime numbers
 lstprimes = []
 
